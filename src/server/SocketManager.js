@@ -20,7 +20,7 @@ module.exports = function(socket){
     socket.on(USER_CONNECTED, (user)=>{
         connectedUsers = addUser(connectedUsers, user)
         socket.user = user
-        socket.emit(VERIFY_USER, nickname, this.setUser)
+        socket.emit(VERIFY_USER, user.name, this.setUser)
         console.log(connectedUsers)
     })
 
